@@ -3,14 +3,12 @@ package search;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import search.domain.Document;
 import search.domain.Env;
 import search.util.Log;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
-import java.io.IOException;
 
 public class WikiDataSourceManager {
     private Env env;
@@ -80,11 +78,4 @@ public class WikiDataSourceManager {
     private class EndSAXException extends SAXException {
     }
 
-    public static void main(String[] args) throws Exception {
-        Env env = new Env();
-        env.setWikiLocation("/Users/shaoyi/project/es/search/wiser/trunk/zhwiki-20180401-pages-articles-multistream.xml");
-        WikiDataSourceManager wikiDataSourceManager = new WikiDataSourceManager(env);
-        wikiDataSourceManager.constructAndProcess();
-
-    }
 }
