@@ -88,7 +88,7 @@ public class Indexer {
             result[0] = from;
             if (isEngChar(parseChars[from])) {
                 //英文字符取一个单词
-                for (; isEngChar(parseChars[from]); ++from) ;
+                for (; from < parseChars.length && isEngChar(parseChars[from]); ++from) ;
             } else {
                 //取nGram个字符或达到可忽略字符
                 for (int count = 0; from < parseChars.length && !isIgnoredChar(parseChars[from]) && count < nGram; ++from, ++count) {

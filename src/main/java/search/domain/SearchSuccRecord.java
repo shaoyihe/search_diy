@@ -22,10 +22,8 @@ public class SearchSuccRecord {
 
     @Override
     public String toString() {
-        return "SearchSuccRecord{" +
-                "score=" + score +
-                " id=" + document.getId() +
-                " title=" + document.getTitle() +
-                '}';
+        return "document_id :" + document.getId() +
+                " title : " + document.getTitle() +
+                " score : " + score;
     }
 }

@@ -1,7 +1,10 @@
 package search;
 
 import search.domain.Env;
+import search.domain.SearchSuccRecord;
 import search.util.Log;
+
+import java.util.List;
 
 /**
  * on 2018/7/26.
@@ -18,7 +21,6 @@ public class Main {
             Log.log(usage);
             return;
         }
-
         String queryText = null;
         Env env = new Env();
         for (int i = 0; i < args.length; ++i) {
@@ -49,7 +51,12 @@ public class Main {
 
     private static void search(Env env, String searchText) throws Exception {
         IndexSearcher indexSearcher = new IndexSearcher(env);
-        indexSearcher.search(searchText).forEach(System.err::println);
+        List<SearchSuccRecord> searchSuccRecords = indexSearcher.search(searchText);
+        if (searchSuccRecords == null) {
+            Log.log("no records");
+        } else {
+            searchSuccRecords.forEach(System.err::println);
+        }
     }
 
     private static void store(Env env) throws Exception {

@@ -1,6 +1,7 @@
 package search;
 
 import search.domain.*;
+import search.util.Log;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class IndexSearcher {
         Map<String, Token> tokenMap = new HashMap<>();
         //分词
         Map<String, Posting> postingMap = indexer.tokenToPosting(text.toCharArray(), null);
+
         if (postingMap.isEmpty()) {
             return null;
         }
