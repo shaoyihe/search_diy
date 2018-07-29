@@ -1,5 +1,6 @@
 package search.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,11 +15,11 @@ public class Posting {
     /**
      * 出现位置数量
      */
-    private Integer posCount;
+    private Integer posCount = 0;
     /**
      * 出现位置信息
      */
-    private List<Integer> positions;
+    private List<Integer> positions = new ArrayList<>();
 
     public Integer getDocumentId() {
         return documentId;

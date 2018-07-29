@@ -1,5 +1,6 @@
 package search.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class Token {
     /**
      * 倒排索引列表
      */
-    private List<Posting> posting;
+    private List<Posting> posting = new ArrayList<>();
     /**
      * 倒排索引DB存储形式
      */
