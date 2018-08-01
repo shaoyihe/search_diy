@@ -2,6 +2,7 @@ package search;
 
 import search.domain.Env;
 import search.domain.SearchSuccRecord;
+import search.util.Asserts;
 import search.util.Log;
 
 import java.util.List;
@@ -39,11 +40,11 @@ public class Main {
             }
         }
 
-        assert env.getStoreLocation() != null;
+        Asserts.isTrue(env.getStoreLocation() != null, "存储路径不能为空");
         if (queryText == null) {
             store(env);
         } else {
-            assert env.getWikiLocation() != null;
+            Asserts.isTrue(env.getWikiLocation() != null, "维基路径不能为空");
             search(env, queryText);
         }
 
